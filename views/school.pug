@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  - let results = [ { School_Name:'NorthWest', Faculty:200, Students:7000 },  { School_Name:'Missouri', Faculty:300, Students:6000 },  { School_Name:'University', Faculty:400, Students:5000 } ];
+
+  div.container-fluid
+    div.row
+      each item in results
+        div.col-sm-2
+          h3 #{item.School_Name}
+          p #{item.Faculty}
+          p #{item.Students}
+          each ite,index in results
+            p value at index #{index} is : #{ite.School_Name},#{ite.Faculty},#{ite.Students}
