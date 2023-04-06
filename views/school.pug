@@ -6,10 +6,14 @@ block content
 
   div.container-fluid
     div.row
-      each item in results
-        div.col-sm-2
+      each item, ind in results
+        div(class='col-sm-2' onclick=`buy(${ind})`) 
           h3 #{item.School_Name}
           p #{item.Faculty}
           p #{item.Students}
           each ite,index in results
             p value at index #{index} is : #{ite.School_Name},#{ite.Faculty},#{ite.Students}
+  script. 
+        function buy(i){
+            alert("You purchased item "+(i+1))
+        }
